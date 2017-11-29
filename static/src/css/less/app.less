@@ -1,0 +1,389 @@
+// Core variables and mixins
+@import "app.variables.less";
+@import "app.mixins.less";
+
+@import "app.reset.less";
+@import "app.layout.less";
+@import "app.layout.boxed.less";
+@import "app.nav.less";
+@import "app.nav.offscreen.less";
+@import "app.nav.dock.less";
+
+@import "app.arrow.less";
+@import "app.buttons.less";
+@import "app.widgets.less";
+
+@import "app.components.less";
+@import "app.plugin.less";
+@import "app.item.less";
+@import "app.ng.less";
+
+@import "app.colors.less";
+@import "app.utilities.less";
+
+@import "app.butterbar.less";
+
+/*@media (min-width: 1500px) {
+    .container {
+        width: 1470px;
+    }
+}*/
+
+input[type=checkbox],
+input[type=radio] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 13px;
+    height: 13px;
+    margin: 0 5px 0 0 !important;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid #dcdcdc;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    border-radius: 1em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative !important;
+}
+input[type=checkbox]:checked::after,
+input[type=radio]:checked::after{
+    content: url(../img/checked.png);
+    width: 13px;
+    height: 13px;
+    display: block;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+}
+input[type=checkbox],input[type=radio] {
+    outline: 0 none;
+}
+
+textarea{
+    resize: none;
+}
+
+input[type="date"].form-control{
+    font-size: 13px;
+}
+
+.no-padder-t{padding-top: 0 !important;}
+.no-padder-r{padding-right: 0 !important;}
+.no-padder-b{padding-bottom: 0 !important;}
+.no-padder-l{padding-left: 0 !important;}
+.no-padder-h{padding-left: 0 !important;padding-right: 0 !important;}
+.no-padder-v{padding-top: 0 !important;padding-bottom: 0 !important;}
+
+
+//信息模块框
+.panel-body{
+  fieldset{
+      border: 2px solid #0085e0;
+      padding-bottom: 15px;
+      margin-bottom: 30px;
+      position: relative;
+      legend{
+          margin: 10px;
+          width: auto;
+          height: 40px;
+          span{
+              display: inline-block;
+              height: 40px;
+              line-height: 40px;
+              padding: 0 14px;
+              font-size: 18px;
+              text-align: center;
+              color: #ffffff;
+              background-color: #0085e0;
+          }
+      }
+      //计分卡表格
+      .scorecard{
+          margin: 0 15px 15px;
+          .scorecard-header{
+              background: #0085e0;
+              color: #ffffff;
+              padding: 10px;
+              cursor: pointer;
+          }
+          .scorecard-body{
+              padding: 15px;
+              background-color: #f5f5f5;
+              background-origin: content-box;
+              table,tr,td{
+                  color: #333333;
+                  border: 1px solid #cdcdcd;
+                  text-align: center;
+                  vertical-align: middle;
+              }
+              thead{
+                  tr{
+                      background-color: #e4e4e4;
+                  }
+              }
+              tbody{
+                  tr:nth-child(2n-1){
+                      background-color:#ffffff;
+                  }
+                  tr:nth-child(2n){
+                      background-color: #f5f5f5;
+                  }
+              }
+          }
+      }
+      //价格表
+      .pricecard{
+          margin: 0 15px 15px;
+          table{
+              tr{
+                  th, td{
+                      border: 1px solid #cdcdcd;
+                      text-align: center;
+                      vertical-align: middle;
+                  }
+              }
+          }
+
+      }
+      //商品卡
+      .productcard{
+          margin: 0 15px 15px;
+          table{
+              table-layout: fixed;
+              tr{
+                  th, td{
+                      border: 1px solid #cdcdcd;
+                      text-align: center;
+                      vertical-align: middle;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+
+                      input[type="number"]{
+                          -moz-appearance: normal;
+                          -ms-progress-appearance: normal;
+                          -webkit-appearance: normal;
+                      }
+
+                  }
+              }
+          }
+      }
+  }
+}
+
+//修改图片
+.img-box{
+    position: relative;
+    .shadow {display: none;}
+    &:hover .shadow{
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: rgba(127,127,127,.7);
+        position: absolute;
+        top:0;
+        left:0;
+        .img-choose{
+            position: absolute;
+            display: block;
+            width: 40px;
+            height:40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: #0085e0;
+            top:50%;
+            left: 30%;
+            transform: translate(-50%,-50%);
+            cursor: pointer;
+            input{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top:0;
+                left:0;
+                opacity:0;
+                filter:alpha(opacity=0);
+                cursor: pointer;
+            }
+            &.v-center{
+                left:50% !important;
+            }
+        }
+        .img-alter{
+            position: absolute;
+            display: block;
+            width: 40px;
+            height:40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: #f05050;
+            top:50%;
+            right: 30%;
+            transform: translate(50%,-50%);
+            cursor: pointer;
+            input{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top:0;
+                left:0;
+                opacity:0;
+                filter:alpha(opacity=0);
+                cursor: pointer;
+            }
+        }
+    }
+
+}
+//上传图片
+.img-upload-box{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    position: relative;
+    .img-upload{
+        width: 100px;
+        height: 100px;
+        border: 1px solid #dddddd;
+        display: block;
+        cursor: pointer;
+        .img-upload-icon{
+            margin-top: 13px;
+            font-size: 24px;
+        }
+        .img-upload-text{
+            font-size: 14px;
+        }
+    }
+    input[type="file"]{
+        position: absolute;
+        width: 100%;
+        height:100%;
+        top:0;
+        left:0;
+        opacity:0;
+        filter:alpha(opacity=0);
+        cursor: pointer;
+    }
+}
+
+//日历卡
+.calender{
+    padding: 1%;
+    overflow: hidden;
+    .prompt{
+        margin-bottom: 1%;
+        color: #000000;
+        .tip-color{
+            display: inline-block;
+            width:14px;
+            height:14px;
+        }
+    }
+    .selectmouth{
+        background-color:#0b87dd;
+        width:100%;
+        overflow:hidden;
+        border-radius:5px 5px 0 0;
+        height: 60px;
+        line-height: 60px;
+        p{
+            float:left;
+            width:33%;
+            color:#FFF;
+            font-size: 18px;
+            cursor:pointer;
+            &.lastmonth{
+                text-align: right;
+            }
+        }
+        .selectdate{
+            background-color:#0b87dd;
+            width:100%;
+            border:none;
+            color:#FFF;
+            font-size: 24px;
+            font-weight:700;
+            text-align:center;
+        }
+    }
+    .data_table{
+        width:100%;
+        border-collapse:collapse;
+        thead{
+            background-color:#59b6f9;
+            td {
+                color:#FFF;
+                text-align:center;
+                border:none 0;
+                padding:1% 0;
+                height: 60px;
+                &.weekend{
+                    background-color: #25a0fe;
+                }
+            }
+        }
+        tbody{
+            td{
+                border:1px solid #57b6f8;
+                text-align:center;
+                padding:1% 0;
+                &.orderdate{
+                    color: #999999;
+                }
+                &.usedate{
+                    color:#323232;
+                }
+                /*&.tdselect{
+                    color:#fff;
+                    background-color:rgba(153,153,153,0.3);
+                }*/
+            }
+        }
+    }
+    //特殊日
+    .setting1{
+        color:#fff;
+        background-color:#ffcd7e;
+    }
+    /*.setting2{
+        color:#fff;
+        background-color:darkgreen;
+    }*/
+    //假日
+    .setting3{
+        color:#fff;
+        background-color:#15cd6b;
+    }
+    //平日
+    .setting4{
+        color:#fff;
+        background-color:#8de0ff;
+    }
+}
+
+.week-day-border{
+    border: 2px solid #8de0ff !important;
+}
+.week-day-bg{
+    background-color:#8de0ff !important;
+}
+
+.weekend-day-border{
+    border: 2px solid #15cd6b !important;
+}
+.weekend-day-bg{
+    background-color:#15cd6b !important;
+}
+
+.special-day-border{
+    border: 2px solid #ffcd7e !important;
+}
+
+.special-day-bg{
+    background-color:#ffcd7e !important;
+}

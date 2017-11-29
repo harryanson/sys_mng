@@ -1,0 +1,39 @@
+<div class="modal-body" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">&times;</button>
+        <h1 class="modal-title">{{info.title}}</h1>
+    </div>
+
+    <div class="row panel-body">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-sm-2">错误码范围：<span class="text-success h5">*</span></label>
+                <div class="col-sm-8">
+                    <select-errrange class="form-control" ng-model="info.range" ng-required="true"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">名称：<span class="text-success h5">*</span></label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control"  maxlength="60" placeholder="名称" ng-model="info.name" ng-required="true" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">简体错误说明：<span class="text-success h5">*</span></label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control"  maxlength="200" placeholder="简体错误码说明" ng-model="info.hans"
+                           ng-required="true">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer" >
+        <div class="col-sm-2 col-sm-offset-8">
+            <button type="submit" class="btn btn-block btn-default" ng-click="cancel()">取消</button>
+        </div>
+        <div class="col-sm-2">
+            <button type="submit" class="btn btn-block btn-success" ng-click="ok()" ng-disabled='form.$invalid'>提交</button>
+        </div>
+    </div>
+</div>

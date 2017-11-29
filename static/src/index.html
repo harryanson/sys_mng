@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh" data-ng-app="app">
+<head>
+  <meta charset="utf-8"/>
+  <title>管理系统</title>
+  <meta name="description" content="sys manage" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <script type="text/javascript">
+    var pathname = location.pathname;
+    var root_dir = pathname.substr(0, pathname.indexOf('index.html'));
+    if (pathname.indexOf('/src/index.html') >= 0) {
+      root_dir = root_dir.substr(0, root_dir.indexOf('src'));
+    }
+    console.log(root_dir);
+
+    document.write('<link rel="stylesheet" type="text/css" href="' + root_dir + 'bower_components/bootstrap/dist/css/bootstrap.css">');
+    document.write('<link rel="stylesheet" type="text/css" href="' + root_dir + 'bower_components/animate.css/animate.css">');
+    document.write('<link rel="stylesheet" type="text/css" href="' + root_dir + 'bower_components/font-awesome/css/font-awesome.min.css">');
+    document.write('<link rel="stylesheet" type="text/css" href="css/font.css">');
+    document.write('<link rel="stylesheet" type="text/css" href="css/app.css">');
+//    document.write('<link rel="stylesheet" type="text/css" href="' + root_dir + 'bower_components/angular-ui-grid/ui-grid.min.css">');
+    document.write('<link rel="stylesheet" type="text/css" href="' + root_dir + 'bower_components/angular-bootstrap-lightbox/dist/angular-bootstrap-lightbox.min.css">');
+  </script>
+</head>
+<body ng-controller="AppCtrl">
+<div class="app" id="app"
+     ng-class="{'app-header-fixed':app.settings.headerFixed, 'app-aside-fixed':app.settings.asideFixed, 'app-aside-folded':app.settings.asideFolded, 'app-aside-dock':app.settings.asideDock, 'container':app.settings.container}"
+     ui-view></div>
+
+<script type="text/javascript">
+  //百度地图
+  document.write('<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=YHsY9aumWNW1gF3KY449t2GbispItKt7"> <\/script>');
+  // jQuery
+  document.write('<script type="text/javascript" src="' + root_dir + 'bower_components/jquery/dist/jquery.min.js"> <\/script>');
+  // Angular
+  document.write('<script type="text/javascript" src="' + root_dir + 'bower_components/angular/angular.min.js"> <\/script>');
+  document.write('<script type="text/javascript" src="' + root_dir + 'bower_components/angular-animate/angular-animate.js"> <\/script>');
+  document.write('<script type="text/javascript" src="' + root_dir + 'bower_components/angular-sanitize/angular-sanitize.js"> <\/script>');
+  document.write('<script type="text/javascript" src="' + root_dir + 'bower_components/angular-touch/angular-touch.js"> <\/script>');
+  document.write('<script type="text/javascript" src="' + root_dir + 'bower_components/angular-ui-router/release/angular-ui-router.js"> <\/script>');
+  document.write('<script type="text/javascript" src="' + root_dir + 'bower_components/ngstorage/ngStorage.min.js"> <\/script>');
+  // bootstrap
+  document.write('<script type="text/javascript" src="' + root_dir + 'bower_components/bootstrap/dist/js/bootstrap.min.js"> <\/script>');
+
+  document.write('<script type="text/javascript" src="' + root_dir + 'bower_components/angular-bootstrap/ui-bootstrap-tpls.js"> <\/script>');
+  // lazyload
+  document.write('<script type="text/javascript" src="' + root_dir + 'bower_components/oclazyload/dist/ocLazyLoad.js"> <\/script>');
+  // ui.grid
+//  document.write('<script type="text/javascript" src="' + root_dir + 'bower_components/angular-ui-grid/ui-grid.min.js"> <\/script>');
+  //moment
+//  document.write('<script type="text/javascript" src="' + root_dir + 'bower_components/moment/min/moment.min.js"> <\/script>');
+  // async
+  document.write('<script type="text/javascript" src="' + root_dir + 'plugins/async.min.js"> <\/script>');
+  // bootstrap提示框
+  document.write('<script type="text/javascript" src="' + root_dir + 'plugins/qiao.js"> <\/script>');
+  //
+      document.write('<script type="text/javascript" src="' + root_dir + 'bower_components/angular-bootstrap-lightbox/dist/angular-bootstrap-lightbox.min.js"> <\/script>');
+  //消息提醒
+//      document.write('<script type="text/javascript" src="' + root_dir + 'bower_components/AngularJS-Toaster/toaster.min.js"> <\/script>');
+  //浮层组件
+      document.write('<script type="text/javascript" src="' + root_dir + 'plugins/contextMenu.js"> <\/script>');
+//  document.write('<script type="text/javascript" src="' + root_dir + 'plugins/echarts.min.js"> <\/script>');
+
+  // App
+  document.write('<script type="text/javascript" src="js/app.js"> <\/script>');
+  document.write('<script type="text/javascript" src="js/config.js"> <\/script>');
+  document.write('<script type="text/javascript" src="js/config.lazyload.js"> <\/script>');
+  document.write('<script type="text/javascript" src="js/config.router.js"> <\/script>');
+  document.write('<script type="text/javascript" src="js/main.js"> <\/script>');
+  document.write('<script type="text/javascript" src="js/services/ui-load.js"> <\/script>');
+  document.write('<script type="text/javascript" src="js/services/param.js"> <\/script>');
+  document.write('<script type="text/javascript" src="js/filters/fromNow.js"> <\/script>');
+  document.write('<script type="text/javascript" src="js/directives/setnganimate.js"> <\/script>');
+  document.write('<script type="text/javascript" src="js/directives/toaste-html.js"> <\/script>');
+  document.write('<script type="text/javascript" src="js/directives/angulartree.js"> <\/script>');
+  document.write('<script type="text/javascript" src="js/directives/ui-butterbar.js"> <\/script>');
+  document.write('<script type="text/javascript" src="js/directives/ui-focus.js"> <\/script>');
+  document.write('<script type="text/javascript" src="js/directives/ui-fullscreen.js"> <\/script>');
+  document.write('<script type="text/javascript" src="js/directives/ui-jq.js"> <\/script>');
+  document.write('<script type="text/javascript" src="js/directives/ui-module.js"> <\/script>');
+  document.write('<script type="text/javascript" src="js/directives/ui-nav.js"> <\/script>');
+  document.write('<script type="text/javascript" src="js/directives/ui-scroll.js"> <\/script>');
+  document.write('<script type="text/javascript" src="js/directives/ui-shift.js"> <\/script>');
+  document.write('<script type="text/javascript" src="js/directives/ui-toggleclass.js"> <\/script>');
+  document.write('<script type="text/javascript" src="js/services/modal.js"> <\/script>');
+  document.write('<script type="text/javascript" src="js/controllers/bootstrap.js"> <\/script>');
+  document.write('<script type="text/javascript" src="js/controllers/base/modal.js"> <\/script>');
+  document.write('<script type="text/javascript" src="js/util/errors.js"> <\/script>');
+  document.write('<script type="text/javascript" src="js/util/errcode.js"> <\/script>');
+  document.write('<script type="text/javascript" src="js/util/treeSource.js"> <\/script>');
+  document.write('<script type="text/javascript" src="js/util/util.js"> <\/script>');
+</script>
+<!--wait dialog Modal -->
+<div class="modal fade" id="waitingModal" tabindex="-1" role="dialog" aria-labelledby="waitingModalLabel" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="waitingModalLabel"><i class="fa fa-clock-o"></i>正在加载，请等待。。。</h4>
+      </div>
+      <div class="modal-body center-block">
+        <div class="progress">
+          <div class="progress-bar bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+
+          </div>
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</body>
+</html>

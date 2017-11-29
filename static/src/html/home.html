@@ -1,0 +1,13 @@
+<div role="tabpanel">
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" ng-repeat="tab in tabs" ng-click="selectTab(tab.key)" ng-class="{'active':selectedTab == $index}">
+            <a data-target="#tab" aria-controls="home" role="tab" data-toggle="tab"  context-menu="menuOptions" model="tab">{{tab.title}} <span ng-click="deleteTab(tab.key)" class="fa fa-remove fa-fw"></span></a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane {{tab.active}}" id="{{tab.key}}" ng-repeat="tab in tabs">
+            <div ng-include="tab.content"></div>
+        </div>
+    </div>
+  <!--<a href="#waitingModal" role="button" class="btn btn-primary" data-toggle="modal">Submit</a>-->
+</div>

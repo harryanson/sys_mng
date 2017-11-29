@@ -1,0 +1,24 @@
+<div class="modal-body" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+    <div class="modal-header" ng-controller="SysUserCtrl">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">&times;</button>
+        <h1 class="modal-title">{{info.title}}</h1>
+    </div>
+
+    <div class="row panel-body">
+        <h2 class="alert alert-danger">是否重置密码?重置后密码：123123</h2>
+    </div>
+
+    <div class="modal-footer" ng-if="info.close">
+        <div class="col-sm-2 col-sm-offset-10">
+            <button type="submit" class="btn btn-block btn-primary" ng-click="cancel()">关闭</button>
+        </div>
+    </div>
+    <div class="modal-footer" ng-if="!info.close">
+        <div class="col-sm-2 col-sm-offset-8">
+            <button type="submit" class="btn btn-block btn-default" ng-click="cancel()">取消</button>
+        </div>
+        <div class="col-sm-2">
+            <button type="submit" class="btn btn-block btn-success" ng-click="ok()" ng-disabled='form.$invalid'>提交</button>
+        </div>
+    </div>
+</div>

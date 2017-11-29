@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="app">
+<head>
+    <meta charset="utf-8"/>
+    <title>管理系统</title>
+    <meta name="description" content="sys manage"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <script type="text/javascript">
+        var pathname = location.pathname;
+        window.root_dir = pathname.substr(0, pathname.indexOf('index.html'));
+        if (pathname.indexOf('/src/index.html') >= 0) {
+            window.root_dir = root_dir.substr(0, root_dir.indexOf('src'));
+        }
+        console.log(root_dir);
+        document.write('<link rel="stylesheet" type="text/css" href="css/all.min.css">');
+        document.write('<link rel="stylesheet" type="text/css" href="' + root_dir + 'bower_components/font-awesome/css/font-awesome.min.css">');
+        document.write('<link rel="stylesheet" type="text/css" href="' + root_dir + 'bower_components/angular-ui-grid/ui-grid.min.css">');
+//        document.write('<link rel="stylesheet" type="text/css" href="' + root_dir + 'bower_components/AngularJS-Toaster/toaster.min.css">');
+    </script>
+</head>
+<body ng-controller="AppCtrl">
+<div class="app" id="app"
+     ng-class="{'app-header-fixed':app.settings.headerFixed, 'app-aside-fixed':app.settings.asideFixed, 'app-aside-folded':app.settings.asideFolded, 'app-aside-dock':app.settings.asideDock, 'container':app.settings.container}"
+     ui-view></div>
+<script type="text/javascript">
+    //百度地图
+    document.write('<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=YHsY9aumWNW1gF3KY449t2GbispItKt7"> <\/script>');
+    //components
+    document.write('<script type="text/javascript" src="js/components.min.js"> <\/script>');
+    //moment
+//    document.write('<script type="text/javascript" src="' + root_dir + 'bower_components/moment/min/moment.min.js"> <\/script>');
+    //图片预览
+//    document.write('<script type="text/javascript" src="' + root_dir + 'bower_components/angular-bootstrap-lightbox/dist/angular-bootstrap-lightbox.min.js"> <\/script>');
+    //提示
+//    document.write('<script type="text/javascript" src="' + root_dir + 'bower_components/AngularJS-Toaster/toaster.min.js"> <\/script>');
+    //浮层组件
+//    document.write('<script type="text/javascript" src="' + root_dir + 'plugins/contextMenu.js"> <\/script>');
+    //图表组件
+//    document.write('<script type="text/javascript" src="' + root_dir + 'plugins/echarts.min.js"> <\/script>');
+    //bundle
+    document.write('<script type="text/javascript" src="js/bundle.min.js"> <\/script>');
+</script>
+</body>
+</html>

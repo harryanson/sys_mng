@@ -1,0 +1,22 @@
+angular.module('app', [
+  'ngAnimate',
+  'ngSanitize',
+  'ngTouch',
+  'ui.bootstrap',
+  'ui.router',
+  'ui.load',
+  'oc.lazyLoad',
+  'ngStorage',
+  'ui.jq',
+  'ui.bootstrap.contextMenu',
+  /*'ui.grid',
+  'ui.grid.pagination',
+  'ui.grid.exporter',
+  'ui.grid.selection',
+  'ui.grid.pinning',
+  'ui.grid.cellNav',
+  'ui.grid.i18n',
+  'ui.grid.autoResize',
+  'ui.grid.resizeColumns',*/
+  'bootstrapLightbox'
+]);

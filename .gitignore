@@ -1,0 +1,11 @@
+node_modules/
+static/bower_components/
+.idea/
+static/dist/
+/server/logs/
+/server/app.pid
+.editorconfig
+static/js/
+static/img/
+static/html/
+static/css/

@@ -1,0 +1,23 @@
+{
+  "restartable": "rs",
+  "watch": [
+    "server/"
+  ],
+  "ignore": [
+    ".git",
+    "node_modules",
+    "test",
+    "server/static",
+    "server/config/errCode.js",
+    "server/config/errs.js"
+  ],
+  "verbose": false,
+  "execMap": {
+    "": "node --harmony",
+    "js": "node --harmony ./server.js"
+  },
+  "env": {
+    "NODE_ENV": "dev"
+  },
+  "ext": "js json"
+}

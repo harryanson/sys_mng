@@ -1,0 +1,61 @@
+<div class="modal-body" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">&times;</button>
+        <h1 class="modal-title">{{info.title}}</h1>
+    </div>
+  <form name='editpwdForm' class="form-horizontal">
+    <div class="row panel-body">
+            <div class="form-group">
+                <label class="control-label col-sm-2">账号名：<span class="text-success h5">*</span></label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" placeholder="请输入账号名..." ng-model="info.loginname"
+                           ng-required="true" readonly/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">旧密码：<span class="text-success h5">*</span></label>
+                <div class="col-sm-5">
+                    <input type="password" class="form-control" maxlength="60" name="oldpwd" placeholder="旧密码..." ng-model="info.oldpwd"
+                           ng-required="true" password-different="{{info.newpwd}}" password-right/>
+                </div>
+                <div class="help-block col-sm-5" ng-messages="editpwdForm.oldpwd.$error" ng-if="editpwdForm.oldpwd.$touched">
+                    <div ng-messages-include="html/messages/pwdmessages.html"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">新密码：<span class="text-success h5">*</span></label>
+                <div class="col-sm-5">
+                    <input type="password" class="form-control" name="newpwd" maxlength="60" placeholder="新密码..." ng-model="info.newpwd"
+                           ng-required="true" password-equally="{{info.isnewpwd}}"/>
+                </div>
+                <div class="help-block col-sm-5" ng-messages="editpwdForm.newpwd.$error" ng-if="editpwdForm.newpwd.$dirty">
+                    <div ng-messages-include="html/messages/pwdmessages.html"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">确认新密码：<span class="text-success h5">*</span></label>
+                <div class="col-sm-5">
+                    <input type="password" class="form-control" name="isnewpwd" maxlength="60" placeholder="确认新密码..." ng-model="info.isnewpwd"
+                           ng-required="true"  password-equally="{{info.newpwd}}"/>
+                </div>
+                <div class="help-block col-sm-5" ng-messages="editpwdForm.isnewpwd.$error" ng-if="editpwdForm.isnewpwd.$dirty">
+                    <div ng-messages-include="html/messages/pwdmessages.html"></div>
+                </div>
+            </div>
+    </div>
+
+    <div class="modal-footer" ng-if="info.close">
+        <div class="col-sm-2 col-sm-offset-10">
+            <button type="submit" class="btn btn-block btn-primary" ng-click="cancel()">关闭</button>
+        </div>
+    </div>
+    <div class="modal-footer" ng-if="!info.close">
+        <div class="col-sm-2 col-sm-offset-8">
+            <button type="submit" class="btn btn-block btn-default" ng-click="cancel()">取消</button>
+        </div>
+        <div class="col-sm-2">
+            <button type="submit" class="btn btn-block btn-success" ng-click="ok()"ng-disabled="(editpwdForm.$dirty && editpwdForm.$invalid) || editpwdForm.$pristine">提交</button>
+        </div>
+    </div>
+  </form>
+</div>

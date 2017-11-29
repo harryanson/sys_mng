@@ -1,0 +1,26 @@
+<div ng-controller="ErrCodeCtrl">
+    <div class="wrapper form-horizontal">
+        <div class="row form-group">
+            <div class="col-sm-3">
+                <label class="control-label col-sm-4">错误码类型：</label>
+                <div class="col-sm-8">
+                    <select-errrange class="input-sm form-control w-md inline v-middle" ng-model="errorRange"/>
+                </div>
+            </div>
+            <div class="col-sm-1">
+                <button class="btn btn-block btn-info" ng-click="getPagedDataAsync()">查询</button>
+            </div>
+            <div class="col-sm-1">
+                <button class="btn btn-block btn-primary" ng-click="openModal('add')">新增</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <div class="panel panel-default">
+            <div class="table-responsive">
+                <div ui-grid="gridOptions" ui-grid-pagination ui-grid-exporter ui-grid-selection ui.grid.pinning ui-grid-auto-resize ui-grid-resize-columns style="min-height:420px"></div>
+            </div>
+        </div>
+    </div>
+</div>

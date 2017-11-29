@@ -1,0 +1,59 @@
+<div class="modal-body" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">&times;</button>
+        <h1 class="modal-title">{{info.msgTitle}}</h1>
+    </div>
+
+    <div class="panel-body">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-sm-2">类型：<span class="text-success h5">*</span></label>
+                <div class="col-sm-8">
+                    <label class="radio-inline no-padder-l">
+                        <input type="radio" ng-model="info.type" ng-checked="info.type">推送
+                    </label>
+                    <label class="radio-inline">
+                        <input ng-model="info.type" ng-checked="info.type" type="radio">系统推送
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">key：<span class="text-success h5">*</span></label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" maxlength="200"  ng-model="info.key"
+                           ng-required="true">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">名称：<span class="text-success h5">*</span></label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" maxlength="60"  ng-model="info.name"
+                           ng-required="true"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">标题：<span class="text-success h5">*</span></label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" maxlength="200"  ng-model="info.title"
+                           ng-required="true">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">内容：<span class="text-success h5">*</span></label>
+                <div class="col-sm-8">
+                    <textarea type="text" rows="3" class="form-control" maxlength="60"
+                              ng-model="info.content" ng-required="true"></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="modal-footer">
+        <div class="col-sm-2 col-sm-offset-8">
+            <button type="submit" class="btn btn-block btn-default" ng-click="cancel()">取消</button>
+        </div>
+        <div class="col-sm-2">
+            <button type="submit" class="btn btn-block btn-success" ng-click="ok()" ng-disabled='form.$invalid'>提交</button>
+        </div>
+    </div>
+</div>
